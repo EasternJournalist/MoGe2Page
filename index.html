@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MoGe-2</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+  <!-- <script type="module" src="static/js/model-viewer.min.js"></script> -->
+
+  <link href="./static/css/sans.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/selection-panel.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="./static/js/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.4.0/gradio.js"></script>
+  <script src="./static/js/babylon.js"></script>
+  <script src="./static/js/babylonjs.loaders.min.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">MoGe-2: Accurate Monocular Geometry with Metric Scale and Sharp
+              Details</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://wangrc.site" target="_blank">Ruicheng Wang</a><sup>1,2</sup>,</span>
+              <span class="author-block"><a href="https://github.com/sicxu" target="_blank">Sicheng Xu</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://yuedong.shading.me/" target="_blank">Yue Dong</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://yudeng.github.io/" target="_blank">Yu Deng</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://jeffreyxiang.github.io/" target="_blank">Jianfeng Xiang</a><sup>3,2</sup>,</span>
+              <span class="author-block"><a href="https://github.com/MaxtirError" target="_blank">Zelong Lv</a><sup>1,2</sup>,</span>
+              <br>
+              <span class="author-block"><a href="http://staff.ustc.edu.cn/~gzsun/" target="_blank">Guangzhong
+                  Sun</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=P91a-UQAAAAJ&hl=en" target="_blank">Xin
+                  Tong</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://jlyang.org/" target="_blank">Jiaolong Yang</a><sup>2</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>USTC,</span>
+              <span class="author-block"><sup>2</sup>Microsoft Research,</span>
+              <span class="author-block"><sup>3</sup>Tsinghua University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2507.02546" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2507.02546" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/microsoft/moge" class="external-link button is-normal is-rounded is-dark"
+                    target="_blank">
+                    <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://huggingface.co/spaces/Ruicheng/MoGe-2"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">🤗</span><span>Demo</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" controls playsinline height="100%">
+          <source src="./static/videos/teaser/moge-2-demo_sound2_crf22.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          <span class="banner">MoGe-2</span> predicts accurate geometry with metric scale and sharp details for single
+          images.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We propose MoGe-2, an advanced open-domain geometry estimation model that recovers a metric scale 3D point
+              map of a scene from a single image.
+              Our method builds upon the recent monocular geometry estimation approach, <a
+                href="https://wangrc.site/MoGePage/" target="_blank" style="color: #0077c0;">MoGe</a>, which predicts
+              affine-invariant point maps with unknown scales.
+              We explore effective strategies to extend MoGe for metric geometry prediction without compromising the
+              relative geometry accuracy provided by the affine-invariant point representation.
+              Additionally, we discover that noise and errors in real data diminish fine-grained detail in the predicted
+              geometry.
+              We address this by developing a unified data refinement approach that filters and completes real data from
+              different sources using sharp synthetic labels, significantly enhancing the granularity of the
+              reconstructed geometry while maintaining the overall accuracy.
+              We train our model on a large corpus of mixed datasets and conducted comprehensive evaluations,
+              demonstrating its superior performance in achieving accurate relative geometry, precise metric scale, and
+              fine-grained detail recovery -- capabilities that no previous methods have simultaneously achieved.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="./static/images/teaser_rank_2x3.svg" alt="teaser image" style="width: 80%; margin: 0 auto;">
+          <div class="content has-text-justified">
+            <p>
+              <b>Rankings in comprehensive evaluations.</b>
+              Our method achieves accurate <strong>R</strong>elative <strong>G</strong>eometry (RG), precise
+              <strong>M</strong>etric <strong>G</strong>eometry (MG), and <strong>S</strong>harp <strong>D</strong>etail
+              (SD)
+              – capabilities not simultaneously achieved by previous approaches.
+              * Methods do not predict camera intrinsics and are evaluated on depth only. &dagger; MoGe does not predict
+              metric scale. For details of evaluations, please refer to our paper.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <img id="enlarged-image">
+
+
+  <section class="hero is-light">
+    <div class="container is-max-desktop" style="width: 100%;">
+      <h2 class="title is-3" style="margin-top: 1em;">Results</h2>
+
+      <div class="content has-text-justified">
+        <!-- <p>
+          Click on the images below to view the predicted geometry.
+        </p> -->
+      </div>
+      <div id="toggleTexturedGallery" class="toggle-container">
+        <button class="toggle-button toggle-left">Geometry only</button>
+        <button class="toggle-button toggle-right active">Textured</button>
+      </div>
+      <div class="model-wrapper" style="width: 100%; aspect-ratio: 1.4/1;">
+        <div class="tips-wrapper">
+          <div class="tips-icon">💡Tips</div>
+          <div class="tips-text">
+            <p>● <b>Zoom</b> - Scroll mouse wheel or pinch</p>
+            <p>● <b>Rotate</b> - Left drag</p>
+            <p>● <b>Pan</b> - Right drag</p>
+            <p>● <b>Pick a point</b> - Left click</p>
+          </div>
+        </div>
+        <div id="measureTextBox" class="float-text-box">
+          Pick two points and measure the distance
+        </div>
+        <canvas id="renderCanvas" class="babylon-model-viewer" style="width: 100%; height: 100%;"></canvas>
+      </div>
+      <div id="gallerySelectionPanel" class="selection-panel" style="width: 100%; aspect-ratio: 3.4/1;">
+        <img class="selectable-image selected" name="Room">
+        <img class="selectable-image" name="Astronauts">
+        <img class="selectable-image" name="Desk">
+        <img class="selectable-image" name="Rover">
+        <img class="selectable-image" name="Skycraper">
+        <img class="selectable-image" name="Traffic">
+        <img class="selectable-image" name="Mountain">
+        <img class="selectable-image" name="Sheeps">
+        <img class="selectable-image" name="StylizedStreet">
+        <img class="selectable-image" name="CatGirl">
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="hero">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+        <h2 class="title is-3">Comparison with Other Metric Geoemtry Estimation Models</h2>
+      </div>
+      
+    </div>
+  </section> -->
+
+  <!--/ Interactive Mesh. -->
+
+  <!-- <section class="hero">
+    <div class="container is-max-desktop is-centered">
+      <gradio-app src="https://ruicheng-moge-2.hf.space"></gradio-app>
+    </div>
+  </section> -->
+
+  <!-- <section class="hero">
+    <div class="container is-max-desktop is-centered">
+      
+    </div>
+  </section> -->
+  <!-- <iframe
+      src="https://ruicheng-moge-2.hf.space"
+      frameborder="0"
+      width="100%"
+      height="1000"
+  ></iframe> -->
+
+  <section class="hero" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title" style="margin-top: 1em;">BibTeX</h2>
+      <pre><code>@misc{wang2025moge2accuratemonoculargeometry,
+      title={MoGe-2: Accurate Monocular Geometry with Metric Scale and Sharp Details}, 
+      author={Ruicheng Wang and Sicheng Xu and Yue Dong and Yu Deng and Jianfeng Xiang and Zelong Lv and Guangzhong Sun and Xin Tong and Jiaolong Yang},
+      year={2025},
+      eprint={2507.02546},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2507.02546}, 
+}</code></pre>
+    </div>
+  </section>
+
+
+  <!-- <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content" style="text-align: center;">
+            <p>
+             
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+
+  <script src="static/js/babylon-model-viewer.js"></script>
+  <script src="static/js/gallery.js"></script>
+  <script src="static/js/selection-panel.js"></script>
+
+</body>
+
+</html>
